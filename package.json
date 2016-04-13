@@ -1,0 +1,40 @@
+{
+  "name": "what-do-i-depend-on",
+  "description": "Shows the list of npm packages you depend on",
+  "version": "0.0.1",
+  "author": "fand <fand@gmork.in>",
+  "bin": {
+    "what-do-i-depend-on": "./bin/cli.js",
+    "wdido": "./bin/cli.js"
+  },
+  "bugs": {
+    "url": "https://github.com/fand/what-do-i-depend-on/issues"
+  },
+  "dependencies": {
+    "@fand/promisify": "0.0.3",
+    "cli-table2": "^0.2.0",
+    "minimist": "^1.2.0"
+  },
+  "devDependencies": {},
+  "files": [
+    "package.json",
+    "README.md",
+    "index.js",
+    "src",
+    "bin"
+  ],
+  "homepage": "https://github.com/fand/what-do-i-depend-on",
+  "keywords": [
+    "dependencies",
+    "npm"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fand/what-do-i-depend-on.git"
+  },
+  "scripts": {
+    "test": "echo 'TBD'"
+  }
+}
