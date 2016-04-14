@@ -10,17 +10,58 @@ process.stdout.on('error', (err) => {
   }
 });
 
+const VERSION = '0.0.1';
+
+var optionator = require('optionator')({
+  prepend : 'Usage : what-do-i-depend-on [path]',
+  options : [{
+    option      : 'dependencies',
+    alias       : 'pro',
+    type        : 'Boolean',
+    description : 'Show only dependencies.',
+  }, {
+    option      : 'devDependencies',
+    alias       : 'dev',
+    type        : 'Boolean',
+    description : 'Show only devDependencies.',
+  }, {
+    option      : 'global',
+    alias       : 'g',
+    type        : 'Boolean',
+    description : 'Show dependencies for packages installed globally.',
+  }, {
+    option      : 'rows',
+    alias       : 'r',
+    type        : 'Number',
+    description : 'Limit the number of packages on the output.',
+    example     : 'what-do-i-depend-on --rows 10',
+  }, {
+    option      : 'depth',
+    alias       : 'd',
+    type        : 'Number',
+    description : 'Limit the depth to search dependencies recursively.',
+    example     : 'what-do-i-depend-on --depth 1',
+  }, {
+    option      : 'json',
+    alias       : 'j',
+    type        : 'Boolean',
+    description : 'Output result in JSON format.',
+  }, {
+    option      : 'version',
+    alias       : 'v',
+    type        : 'Boolean',
+    description : 'Show version.',
+  }, {
+    option      : 'help',
+    alias       : 'h',
+    type        : 'Boolean',
+    description : 'Show this help.',
+  }],
+});
+
 function getOpts () {
-  var _opts = minimist(process.argv.slice(2));
-  var opts = {
-    path            : _opts._[0] || '.',
-    dependencies    : _opts.pro || _opts.dependencies,
-    devDependencies : _opts.dev || _opts.devDependencies,
-    global          : _opts.g || _opts.global,
-    rows            : _opts.r || _opts.rows,
-    depth           : _opts.d || _opts.depth,
-    json            : _opts.j || _opts.json,
-  };
+  var opts = optionator.parseArgv(process.argv);
+  opts.path = opts._[0] || '.';
 
   // Enable both deps if there is no explicit opts
   if (!opts.dependencies && !opts.devDependencies) {
@@ -31,7 +72,22 @@ function getOpts () {
 }
 
 function main () {
-  var opts = getOpts();
+  try {
+    var opts = getOpts();
+  }
+  catch(e) {
+    console.log(e.message);
+    return;
+  }
+
+  if (opts.version) {
+    console.log(VERSION);
+    return;
+  }
+  if (opts.help) {
+    console.log(optionator.generateHelp());
+    return;
+  }
 
   whatDoIDependOn(opts).then((deps) => {
     if (opts.json) {

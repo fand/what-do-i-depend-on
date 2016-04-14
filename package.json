@@ -13,7 +13,7 @@
   "dependencies": {
     "@fand/promisify": "0.0.3",
     "cli-table2": "^0.2.0",
-    "minimist": "^1.2.0"
+    "optionator": "^0.8.1"
   },
   "devDependencies": {},
   "files": [
