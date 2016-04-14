@@ -1,6 +1,5 @@
 'use strict';
 
-var minimist        = require('minimist');
 var whatDoIDependOn = require('./whatDoIDependOn');
 var view            = require('./view');
 
@@ -13,7 +12,7 @@ process.stdout.on('error', (err) => {
 const VERSION = '0.0.2';
 
 var optionator = require('optionator')({
-  prepend : 'Usage : what-do-i-depend-on [path]',
+  prepend : 'Usage : what-do-i-depend-on [path] [options]',
   options : [{
     option      : 'dependencies',
     alias       : 'pro',

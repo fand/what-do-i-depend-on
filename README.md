@@ -28,19 +28,16 @@ $ wdido
 `wdido` takes options.
 
 ```
-Usage: what-do-i-depend-on [path] {OPTIONS}
+Usage : what-do-i-depend-on [path]
 
-       --dependencies, --pro  Show only dependencies
-
-    --devDependencies, --dev  Show only devDependencies
-
-                --global, -g  Show dependencies for packages installed globally.
-
-                  --rows, -r  Limit the number of packages on the output.
-
-                 --depth, -d  Limit the depth to search dependencies recursively.
-
-                  --json, -j  Output result in JSON format.
+  --dependencies, --pro     Show only dependencies.
+  --devDependencies, --dev  Show only devDependencies.
+  -g, --global              Show dependencies for packages installed globally.
+  -r, --rows Number         Limit the number of packages on the output.
+  -d, --depth Number        Limit the depth to search dependencies recursively.
+  -j, --json                Output result in JSON format.
+  -v, --version             Show version.
+  -h, --help                Show this help.
 ```
 
 # LICENSE
