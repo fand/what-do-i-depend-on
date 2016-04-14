@@ -1,7 +1,7 @@
 {
   "name": "what-do-i-depend-on",
   "description": "Shows the list of npm packages you depend on",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": "fand <fand@gmork.in>",
   "bin": {
     "what-do-i-depend-on": "./bin/cli.js",
