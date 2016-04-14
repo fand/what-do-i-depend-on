@@ -28,7 +28,7 @@ $ wdido
 `wdido` takes options.
 
 ```
-Usage : what-do-i-depend-on [path]
+Usage : what-do-i-depend-on [path] [options]
 
   --dependencies, --pro     Show only dependencies.
   --devDependencies, --dev  Show only devDependencies.
