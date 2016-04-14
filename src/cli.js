@@ -10,7 +10,7 @@ process.stdout.on('error', (err) => {
   }
 });
 
-const VERSION = '0.0.1';
+const VERSION = '0.0.2';
 
 var optionator = require('optionator')({
   prepend : 'Usage : what-do-i-depend-on [path]',
