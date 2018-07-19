@@ -1,6 +1,6 @@
 'use strict';
 
-var Table = require('cli-table2');
+var Table = require('cli-table3');
 
 function sortDeps (deps, rows) {
   var tuples = [];
